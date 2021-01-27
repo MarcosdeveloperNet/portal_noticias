@@ -1,0 +1,22 @@
+{
+  "name": "portal_noticias",
+  "version": "1.0.0",
+  "description": "Site de Noticias",
+  "main": "noticias.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcosdeveloperNet/portal_noticias.git"
+  },
+  "author": "Marcos Flávio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcosdeveloperNet/portal_noticias/issues"
+  },
+  "homepage": "https://github.com/MarcosdeveloperNet/portal_noticias#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
