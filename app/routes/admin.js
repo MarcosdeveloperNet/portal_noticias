@@ -1,7 +1,7 @@
 module.exports = function(application){
 
     application.get('/formulario_inclusao_noticia', function(req, res){
-            res.render("admin/form_add_noticia");
+            res.render("admin/form_add_noticia", {validacao: {}});
         });
         application.post('/noticia/salvar', function(req, res){
             var noticia = req.body;
@@ -14,6 +14,11 @@ module.exports = function(application){
         req.assert('data_noticia', 'A data da notícia é obrigatória.').notEmpty().isDate({format: 'YYYY-MM-DD'});
         req.assert('noticia', 'A notícia é obrigatório.').notEmpty();
 
+        var erros = req.validationErros();
+            if(erros){
+                res.render("admin/form_add_noticia", {validacao : erros});
+                    return;
+            };
 
         var connection = application.config.dbConection();
         var noticiasModel = new application.app.models.NoticiasDAO(connection);
